@@ -15,11 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AccountController {
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
 
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return name+"1";
+    @GetMapping("/getLatestBalance")
+    public String getLatestBalance(@RequestParam(value = "accountNumber", defaultValue = "Invalid") String accountNumber) {
+
+        return accountNumber;
+    }
+
+    @GetMapping("/getTransactions")
+    public String getTransactionsInRange(@RequestParam(value = "t1", defaultValue = "Invalid") String t1, @RequestParam(value = "t1", defaultValue = "Invalid") String t2) {
+
+        return t1+t2;
     }
 }
