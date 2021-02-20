@@ -20,7 +20,7 @@ public class AccountController {
     KafkaConsumer kafkaConsumer;
     @GetMapping("/getLatestBalance")
     public String getLatestBalance(@RequestParam(value = "accountNumber", defaultValue = "Invalid") String accountNumber) {
-        
+
         return kafkaConsumer.getAccounts().toString();
     }
 
