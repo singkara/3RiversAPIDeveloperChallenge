@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
 
-
     @KafkaListener(topics = "account", group = "json",
             containerFactory = "accountKafkaListenerFactory")
     public void consumeJson(Account account) {
@@ -17,11 +16,10 @@ public class KafkaConsumer {
     }
 
 
-
-/*    @KafkaListener(topics = "transaction", group = "json",
+    @KafkaListener(topics = "transaction", group = "json",
             containerFactory ="transactionKafkaListenerFactory" )
     public void consumeJson(Transactions transactions) {
         System.out.println("Consumed JSON Message: " + transactions);
-    }*/
+    }
 
 }
