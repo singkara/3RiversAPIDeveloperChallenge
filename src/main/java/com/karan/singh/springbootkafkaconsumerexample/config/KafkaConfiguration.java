@@ -4,6 +4,9 @@ import com.karan.singh.springbootkafkaconsumerexample.model.Account;
 import com.karan.singh.springbootkafkaconsumerexample.model.Transactions;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.kafka.streams.kstream.KStream;
+import org.springframework.cloud.stream.annotation.Input;
+import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
@@ -78,7 +81,5 @@ public class KafkaConfiguration {
         factory.setConsumerFactory(transactionConsumerFactory());
         return factory;
     }
-
-
 
 }
