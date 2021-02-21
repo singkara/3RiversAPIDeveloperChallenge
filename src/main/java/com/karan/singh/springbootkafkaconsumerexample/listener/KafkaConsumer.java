@@ -14,19 +14,19 @@ public class KafkaConsumer {
     List<Account> accounts = new ArrayList<>();
     List<Transactions> transactions = new ArrayList<>();
 
-    @KafkaListener(topics = "account", group = "json",
+   /* @KafkaListener(topics = "account", group = "json",
             containerFactory = "accountKafkaListenerFactory")
     public void consumeJson(Account account) {
         accounts.add(account);
         System.out.println("Consumed JSON Message: " + account);
     }
-
-    @KafkaListener(topics = "transaction", group = "json",
+*/
+/*    @KafkaListener(topics = "transaction", group = "json",
             containerFactory ="transactionKafkaListenerFactory" )
     public void consumeJson(Transactions transaction) {
         this.transactions.add(transaction);
         System.out.println("Consumed JSON Message: " + transactions);
-    }
+    }*/
 
     public List<Account> getAccounts() {
         return accounts;
